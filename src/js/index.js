@@ -20,5 +20,11 @@ const callApi = async (queryCity) => {
     `https://api.openweathermap.org/data/2.5/weather?q=${queryCity}&APPID=${API_KEY}&units=metric`
   );
   const rawData = await response.json();
-  return rawData;
+  if (+rawData.cod !== 200) {
+    console.log(rawData);
+    return "error";
+  } else {
+    const weatherData = Object.assign({}, rawData.main);
+    return weatherData;
+  }
 };
