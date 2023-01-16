@@ -45,7 +45,13 @@ const form = document.querySelector("form");
 form.onsubmit = () => {
   try {
     const input = document.querySelector("input");
-    console.log(callApi(input.value));
+    callApi(input.value)
+      .then((weatherData) => {
+        console.log(weatherData);
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
   } catch (error) {
     throw new Error(error);
   }
