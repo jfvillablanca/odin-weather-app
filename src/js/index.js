@@ -17,7 +17,7 @@ body.appendChild(queryForm());
 
 const callApi = async (queryCity) => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${queryCity}&APPID=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${queryCity}&APPID=${API_KEY}&units=metric`
   );
   const rawData = await response.json();
   return rawData;
