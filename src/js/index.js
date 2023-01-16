@@ -26,8 +26,9 @@ const formatDateTime = (dt) => {
   return `${new Intl.DateTimeFormat("en-US", options).format(new Date(dt))}`;
 };
 
+const getCurrentWeather = async (queryLocation) => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${queryCity}&APPID=${API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${queryLocation}&APPID=${API_KEY}&units=metric`
   );
   const rawData = await response.json();
   if (+rawData.cod !== 200) {
@@ -56,7 +57,7 @@ const form = document.querySelector("form");
 form.onsubmit = () => {
   try {
     const input = document.querySelector("input");
-    callApi(input.value)
+    getCurrentWeather(input.value)
       .then((weatherData) => {
         console.log(weatherData);
       })
