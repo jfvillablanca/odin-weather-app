@@ -28,3 +28,13 @@ const callApi = async (queryCity) => {
     return weatherData;
   }
 };
+const form = document.querySelector("form");
+form.onsubmit = () => {
+  try {
+    const input = document.querySelector("input");
+    console.log(callApi(input.value));
+  } catch (error) {
+    throw new Error(error);
+  }
+  return false;
+};
