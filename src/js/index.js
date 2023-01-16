@@ -15,7 +15,17 @@ const queryForm = () => {
 const body = document.querySelector("body");
 body.appendChild(queryForm());
 
-const callApi = async (queryCity) => {
+const formatDateTime = (dt) => {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  dt *= 1000; // convert to milliseconds
+  return `${new Intl.DateTimeFormat("en-US", options).format(new Date(dt))}`;
+};
+
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${queryCity}&APPID=${API_KEY}&units=metric`
   );
