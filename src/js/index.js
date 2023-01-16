@@ -15,6 +15,23 @@ const queryForm = () => {
 const body = document.querySelector("body");
 body.appendChild(queryForm());
 
+const queryLocation = async (location) => {
+  const response = await fetch(
+    ` https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&APPID=${API_KEY}`
+  );
+  const rawData = await response.json();
+  if (+rawData.cod >= 400) {
+    return `Error: Geocoding API => Status Code: ${rawData.cod}`;
+  } else {
+    const weatherData = await getCurrentWeather(
+      rawData[0].lat,
+      rawData[0].lon,
+      rawData[0].name
+    );
+    return weatherData;
+  }
+};
+
 const formatDateTime = (dt) => {
   const options = {
     weekday: "long",
