@@ -24,10 +24,23 @@ const callApi = async (queryCity) => {
     console.log(rawData);
     return "error";
   } else {
-    const weatherData = Object.assign({}, rawData.main);
+    const weatherData = Object.assign(
+      {},
+      {
+        name: rawData.name,
+        temp_ave: rawData.main.temp,
+        temp_feels_like: rawData.main.feels_like,
+        temp_min: rawData.main.temp_min,
+        weather_desc: rawData.weather[0].description,
+        weather_icon: rawData.weather[0].icon,
+        wind_angle: rawData.wind.deg,
+        wind_speed: rawData.wind.speed,
+      }
+    );
     return weatherData;
   }
 };
+
 const form = document.querySelector("form");
 form.onsubmit = () => {
   try {
