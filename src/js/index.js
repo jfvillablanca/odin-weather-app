@@ -38,6 +38,7 @@ const formatDateTime = (dt) => {
       {},
       {
         name: rawData.name,
+        time: formatDateTime(rawData.dt),
         temp_ave: rawData.main.temp,
         temp_feels_like: rawData.main.feels_like,
         temp_min: rawData.main.temp_min,
