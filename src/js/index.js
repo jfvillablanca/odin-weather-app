@@ -75,7 +75,7 @@ const form = document.querySelector("form");
 form.onsubmit = () => {
   try {
     const input = document.querySelector("input");
-    getCurrentWeather(input.value)
+    queryLocation(input.value)
       .then((weatherData) => {
         console.log(weatherData);
       })
