@@ -26,19 +26,20 @@ const formatDateTime = (dt) => {
   return `${new Intl.DateTimeFormat("en-US", options).format(new Date(dt))}`;
 };
 
-const getCurrentWeather = async (queryLocation) => {
+const getCurrentWeather = async (lat, lon, location) => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${queryLocation}&APPID=${API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}&units=metric`
   );
   const rawData = await response.json();
   if (+rawData.cod !== 200) {
     console.log(rawData);
-    return "error";
+    return `Error: Current Weather API => Status Code: ${rawData.cod}`;
   } else {
     const weatherData = Object.assign(
       {},
       {
-        name: rawData.name,
+        name: location,
+        name_latlon: rawData.name,
         time: formatDateTime(rawData.dt),
         temp_ave: rawData.main.temp,
         temp_feels_like: rawData.main.feels_like,
