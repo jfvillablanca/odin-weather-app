@@ -63,32 +63,35 @@ input[type="submit"] {
 
 .weather-condition {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-auto-rows: auto;
   align-items: center;
 
   margin-bottom: 3rem;
 }
 
-.weather-condition svg {
+.weather-gist-div {
+  display:grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.weather-gist-div svg {
+  place-self: center;
   min-height: 9rem; 
   width: auto;
 }
 
 .weather-gist {
+  align-self: center;
   margin-left: 2rem;
-  font-size: 3rem;
+  font-size: 3.3rem;
 }
 
 .weather-desc {
   margin-bottom: 1rem;
   font-size: 5rem;
-
-  grid-column: span 2;
 }
 
 .temp-group {
-  grid-column: span 2;
-
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
