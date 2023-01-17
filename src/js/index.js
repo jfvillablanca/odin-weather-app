@@ -1,4 +1,5 @@
 import "../css/styles.css";
+const SVGInject = require("svg-inject");
 
 const API_KEY = "f23670da91c3a4b07ec78478022186d0";
 
@@ -74,3 +75,10 @@ form.onsubmit = () => {
   }
   return false;
 };
+
+const svgs = document.querySelectorAll('img[src$=".svg"]');
+for (let i = 0; i < svgs.length; i++) {
+  SVGInject(svgs[i], function (err, _) {
+    if (err) throw err;
+  });
+}
