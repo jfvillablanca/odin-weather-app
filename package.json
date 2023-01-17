@@ -17,5 +17,9 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@iconfu/svg-inject": "^1.2.3",
+    "svg-inject": "^0.1.0"
   }
 }
