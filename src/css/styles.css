@@ -86,4 +86,37 @@ input[type="submit"] {
   grid-column: span 2;
 }
 
+.temp-group {
+  grid-column: span 2;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.temp-ave {
+  font-size: 4.3rem;
+  align-self: center;
+}
+
+.temp-feels-like {
+  font-size: 3rem;
+}
+
+.temp-min-div,
+.temp-max-div {
+  font-size: 1.8rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.temp-feels-like-div p,
+.temp-min-div p,
+.temp-max-div p {
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
   margin-bottom: 3rem;
