@@ -52,16 +52,16 @@ const getCurrentWeather = async (lat, lon, location) => {
       {
         time: formatDateTime(localTime),
         name: location,
-        name_latlon: rawData.name,
-        temp_ave: rawData.main.temp,
-        temp_feels_like: rawData.main.feels_like,
-        temp_min: rawData.main.temp_min,
-        weather_desc: rawData.weather[0].description,
-        weather_icon: rawData.weather[0].icon,
-        wind_angle: rawData.wind.deg,
-        wind_speed: rawData.wind.speed,
+        name_latlon: rawData.name || null,
+        main_temp_ave: rawData.main.temp || null,
+        main_temp_feels_like: rawData.main.feels_like || null,
+        main_temp_min: rawData.main.temp_min || null,
         sys_sunrise: formatDateTime(sunriseTime),
         sys_sunset: formatDateTime(sunsetTime),
+        weather_desc: rawData.weather[0].description || null,
+        weather_icon: rawData.weather[0].icon || null,
+        wind_angle: rawData.wind.deg || null,
+        wind_speed: rawData.wind.speed || null,
       }
     );
     return weatherData;
