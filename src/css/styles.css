@@ -175,6 +175,46 @@ input[type="submit"] {
   opacity: 0.8;
 }
 
+.barometric-group,
+.wind-group {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.humidity-div,
+.pressure-div,
+.wind-speed-div,
+.wind-angle-div {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+}
+
+
+.humidity-div p,
+.pressure-div p,
+.wind-speed-div p,
+.wind-angle-div p {
+  grid-column: span 2;
+  margin-bottom: 1rem;
+}
+
+.humidity-div svg,
+.pressure-div svg,
+.wind-speed-div svg,
+.wind-angle-div svg {
+  height: 4rem;
+  width: auto;
+  margin-right: 2rem;
+}
+
+.barometric-group h2,
+.wind-group h3 {
+  font-size: 2.6rem;
+}
+
 svg * {
   stroke: var(--color-old-white);
 }
