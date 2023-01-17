@@ -74,10 +74,10 @@ const getCurrentWeather = async (lat, lon, location) => {
   }
 };
 
-const form = document.querySelector("form");
-form.onsubmit = () => {
+const searchbar = document.querySelector(".searchbar");
+searchbar.onsubmit = () => {
   try {
-    const input = document.querySelector("input");
+    const input = document.querySelector("input[type='text']");
     queryLocation(input.value)
       .then((weatherData) => {
         console.log(weatherData);
