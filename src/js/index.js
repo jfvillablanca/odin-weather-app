@@ -41,12 +41,16 @@ const getCurrentWeather = async (lat, lon, location) => {
     console.log(rawData);
     return `Error: Current Weather API => Status Code: ${rawData.cod}`;
   } else {
+    const timezoneShift = rawData.timezone || null;
+    const localTime = (rawData.dt || null) + timezoneShift;
+
     const weatherData = Object.assign(
       {},
+      // TODO: Check if day or night
       {
+        time: formatDateTime(localTime),
         name: location,
         name_latlon: rawData.name,
-        time: formatDateTime(rawData.dt),
         temp_ave: rawData.main.temp,
         temp_feels_like: rawData.main.feels_like,
         temp_min: rawData.main.temp_min,
