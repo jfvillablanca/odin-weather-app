@@ -60,3 +60,30 @@ input[type="submit"] {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.weather-condition {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+
+  margin-bottom: 3rem;
+}
+
+.weather-condition svg {
+  min-height: 9rem; 
+  width: auto;
+}
+
+.weather-gist {
+  margin-left: 2rem;
+  font-size: 3rem;
+}
+
+.weather-desc {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+
+  grid-column: span 2;
+}
+
+  margin-bottom: 3rem;
