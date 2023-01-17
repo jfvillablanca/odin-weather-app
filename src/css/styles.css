@@ -93,29 +93,31 @@ input[type="submit"] {
 
 .temp-group {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.temp-ave {
+.temp-feels-like-div {
+  grid-column: span 3;
   font-size: 4.3rem;
   align-self: center;
 }
 
-.temp-feels-like {
+.temp-actual {
   font-size: 3rem;
 }
 
+.temp-actual-div,
 .temp-min-div,
 .temp-max-div {
   font-size: 1.8rem;
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
-  gap: 2rem;
 }
 
 .temp-feels-like-div p,
+.temp-actual-div p,
 .temp-min-div p,
 .temp-max-div p {
   font-size: 1.8rem;
