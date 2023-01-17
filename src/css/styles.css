@@ -15,4 +15,14 @@
 
 body {
   font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  background-color: var(--color-winter-blue);
+  color: var(--color-old-white);
+
+  padding: 3rem;
+  max-height: 100vh;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
 }
