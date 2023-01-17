@@ -8,6 +8,9 @@
 
 :root {
   font-size: 62.5%;
+
+  --color-winter-blue: #252535;
+  --color-old-white: #c8c093;
 }
 
 body {
