@@ -128,28 +128,35 @@ input[type="submit"] {
   margin-bottom: 3rem;
 
   display: grid;
-  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr min-content 1fr;
-  gap: 1rem;
+}
+
+.location-and-time > * {
+  margin-bottom: 2rem;
 }
 
 .city-div {
   font-size: 3rem;
-  grid-column: span 2;
 
   display: grid;
   grid-template-columns: 1fr 9fr;
 }
 
 .city-div svg {
-  height: 50%;
+  height: 60%;
   width: auto;
   
-  align-self: center;
+  place-self: center;
 }
 
 .city span {
   font-size: 2.3rem;
+}
+
+.sunrise-sunset-div {
+  display: grid;
+  grid-template-columns: min-content min-content;
+  gap: 5rem;
 }
 
 .time-sunrise-div,
@@ -162,10 +169,6 @@ input[type="submit"] {
 .time-sunset,
 .time-sunrise {
   font-size: 2rem;
-}
-
-.time-measure-div {
-  grid-column: span 2;
 }
 
 .time-measure-div p {
