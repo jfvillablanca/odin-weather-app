@@ -1,5 +1,6 @@
 import "../css/styles.css";
 const SVGInject = require("svg-inject");
+import * as Images from "./images.js";
 
 const API_KEY = "f23670da91c3a4b07ec78478022186d0";
 
@@ -75,6 +76,18 @@ form.onsubmit = () => {
   }
   return false;
 };
+
+// NOTE: DOM STUFF
+
+const weatherConditionIcon = document.querySelector(".weather-condition-icon");
+// NOTE: src is a stub
+weatherConditionIcon.setAttribute("src", Images.WeatherIcon);
+const locationIcon = document.querySelector(".location-icon");
+locationIcon.setAttribute("src", Images.LocationIcon);
+const sunriseIcon = document.querySelector(".time-sunrise-icon");
+sunriseIcon.setAttribute("src", Images.SunriseIcon);
+const sunsetIcon = document.querySelector(".time-sunset-icon");
+sunsetIcon.setAttribute("src", Images.SunsetIcon);
 
 const svgs = document.querySelectorAll('img[src$=".svg"]');
 for (let i = 0; i < svgs.length; i++) {
