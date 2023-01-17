@@ -60,6 +60,7 @@ input[type="submit"] {
   background-image: url("../images/search.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .weather-condition {
