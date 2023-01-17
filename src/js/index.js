@@ -43,6 +43,8 @@ const getCurrentWeather = async (lat, lon, location) => {
   } else {
     const timezoneShift = rawData.timezone || null;
     const localTime = (rawData.dt || null) + timezoneShift;
+    const sunriseTime = (rawData.sys.sunrise || null) + timezoneShift;
+    const sunsetTime = (rawData.sys.sunset || null) + timezoneShift;
 
     const weatherData = Object.assign(
       {},
@@ -58,6 +60,8 @@ const getCurrentWeather = async (lat, lon, location) => {
         weather_icon: rawData.weather[0].icon,
         wind_angle: rawData.wind.deg,
         wind_speed: rawData.wind.speed,
+        sys_sunrise: formatDateTime(sunriseTime),
+        sys_sunset: formatDateTime(sunsetTime),
       }
     );
     return weatherData;
