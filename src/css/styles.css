@@ -26,3 +26,27 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
 }
+.searchbar {
+  width: min-content;
+  border-bottom: 2px solid var(--color-old-white);
+  margin-bottom: 3rem;
+
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+input[type="text"] {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+input[type="submit"] {
+  height: 3.2rem;
+  width: 3.2rem;
+  background: none;
+  border: none;
+  background-image: url("../images/search.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
