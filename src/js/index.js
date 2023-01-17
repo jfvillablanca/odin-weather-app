@@ -102,6 +102,14 @@ const sunriseIcon = document.querySelector(".time-sunrise-icon");
 sunriseIcon.setAttribute("src", Images.SunriseIcon);
 const sunsetIcon = document.querySelector(".time-sunset-icon");
 sunsetIcon.setAttribute("src", Images.SunsetIcon);
+const humidityIcon = document.querySelector(".humidity-icon");
+humidityIcon.setAttribute("src", Images.HumidityIcon);
+const pressureIcon = document.querySelector(".pressure-icon");
+pressureIcon.setAttribute("src", Images.PressureIcon);
+const windSpeedIcon = document.querySelector(".wind-speed-icon");
+windSpeedIcon.setAttribute("src", Images.WindSpeedIcon);
+const windAngleIcon = document.querySelector(".wind-angle-icon");
+windAngleIcon.setAttribute("src", Images.WindAngleIcon);
 
 const svgs = document.querySelectorAll('img[src$=".svg"]');
 for (let i = 0; i < svgs.length; i++) {
