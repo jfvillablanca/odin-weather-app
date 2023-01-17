@@ -24,7 +24,7 @@ body {
   overflow: hidden;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
 }
 
 .current-weather {
