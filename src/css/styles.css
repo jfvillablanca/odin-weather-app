@@ -26,6 +26,16 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
 }
+
+.current-weather {
+  display: grid;
+}
+
+.weather-now {
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+}
+
 .searchbar {
   width: min-content;
   border-bottom: 2px solid var(--color-old-white);
