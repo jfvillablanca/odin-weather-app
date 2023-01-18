@@ -182,6 +182,8 @@ function updateDOM(weatherData) {
 
 const weatherConditionIcon = document.querySelector(".weather-condition-icon");
 weatherConditionIcon.setAttribute("src", Images.LoadingIcon);
+const temperatureIcon = document.querySelector(".temp-icon");
+temperatureIcon.setAttribute("src", Images.TempLoadingIcon);
 const locationIcon = document.querySelector(".location-icon");
 locationIcon.setAttribute("src", Images.LocationIcon);
 const sunriseIcon = document.querySelector(".time-sunrise-icon");
@@ -231,6 +233,9 @@ function loadingDOM() {
 
   const tempFeelsLike = document.querySelector(".temp-feels-like");
   tempFeelsLike.textContent = "Loading...";
+
+  const temperatureIcon = document.querySelector(".temp-icon");
+  temperatureIcon.setAttribute("src", Images.TempLoadingIcon);
 
   const tempActual = document.querySelector(".temp-actual");
   tempActual.textContent = "69 °C";
