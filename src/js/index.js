@@ -92,6 +92,7 @@ searchbar.onsubmit = () => {
     const input = document.querySelector("input[type='text']");
     queryLocation(input.value)
       .then((weatherData) => {
+        updateDOM(weatherData);
       })
       .catch((error) => {
         throw new Error(error);
