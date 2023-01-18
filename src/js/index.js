@@ -94,6 +94,7 @@ const input = document.querySelector("input[type='text']");
 searchbar.onsubmit = () => tryQuery(input.value);
 
 function tryQuery(queriedLocation) {
+  loadingDOM();
   try {
     queryLocation(queriedLocation)
       .then((weatherData) => {
@@ -209,3 +210,66 @@ injectSVG();
 // NOTE: Location for initial page load
 const initialLocation = "Manila";
 tryQuery(initialLocation);
+
+function loadingDOM() {
+  const weatherGist = document.querySelector(".weather-gist");
+  weatherGist.textContent = "Loading...";
+
+  const weatherDescription = document.querySelector(".weather-desc");
+  weatherDescription.textContent = "Loading...";
+
+  let weatherConditionIcon = document.querySelector(".weather-condition-icon");
+  if (weatherConditionIcon.tagName === "svg") {
+    const parent = weatherConditionIcon.parentElement;
+    weatherConditionIcon.remove();
+    weatherConditionIcon = document.createElement("img");
+    weatherConditionIcon.classList.add("weather-condition-icon");
+    weatherConditionIcon.setAttribute("alt", "weather icon");
+    parent.prepend(weatherConditionIcon);
+  }
+  weatherConditionIcon.setAttribute("src", Images.LoadingIcon);
+
+  const tempFeelsLike = document.querySelector(".temp-feels-like");
+  tempFeelsLike.textContent = "Loading...";
+
+  const tempActual = document.querySelector(".temp-actual");
+  tempActual.textContent = "69 °C";
+
+  const tempMin = document.querySelector(".temp-min");
+  tempMin.textContent = "69 °C";
+
+  const tempMax = document.querySelector(".temp-max");
+  tempMax.textContent = "69 °C";
+
+  const city = document.querySelector(".city");
+  city.textContent = "Loading...";
+
+  const country = document.querySelector(".country");
+  country.textContent = "";
+
+  const sunrise = document.querySelector(".time-sunrise");
+  sunrise.textContent = "69:69";
+
+  const sunset = document.querySelector(".time-sunset");
+  sunset.textContent = "69:69";
+
+  const measureTime = document.querySelector(".time-measure");
+  measureTime.textContent = "Loading...";
+
+  const measureLocation = document.querySelector(".time-measure-loc");
+  measureLocation.textContent = "";
+
+  const humidity = document.querySelector(".humidity");
+  humidity.textContent = "69%";
+
+  const pressure = document.querySelector(".pressure");
+  pressure.textContent = "69 hPa";
+
+  const windSpeed = document.querySelector(".wind-speed");
+  windSpeed.textContent = "69 km/h";
+
+  const windAngle = document.querySelector(".wind-angle");
+  windAngle.textContent = "°";
+
+  injectSVG();
+}
