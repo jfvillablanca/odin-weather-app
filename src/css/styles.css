@@ -140,19 +140,23 @@ input[type="submit"] {
 .city-div {
   font-size: 3rem;
 
-  display: grid;
-  grid-template-columns: 1fr 9fr;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .city-div svg {
   height: 60%;
   width: auto;
-  
-  place-self: center;
+  /* align-self: center; */
 }
 
-.city span {
-  font-size: 2.3rem;
+.city {
+  font-size: 3.8rem;
+}
+
+.country {
+  font-size: 2.9rem;
 }
 
 .sunrise-sunset-div {
