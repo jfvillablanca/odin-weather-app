@@ -131,12 +131,6 @@ function updateDOM(weatherData) {
     "src",
     Images.WeatherIcon[`${ic}${dn}_${id}`]
   );
-  // NOTE: src is a stub
-  // weatherData.weather_id
-  // weatherData.weather_icon
-  // weatherData.isDayOrNight
-
-  weatherConditionIcon.setAttribute("src", Images.WeatherIcon);
 
   const tempFeelsLike = document.querySelector(".temp-feels-like");
   tempFeelsLike.textContent = weatherData.main_temp_feels_like + " °C";
