@@ -138,6 +138,32 @@ function updateDOM(weatherData) {
   const tempFeelsLike = document.querySelector(".temp-feels-like");
   tempFeelsLike.textContent = weatherData.main_temp_feels_like + " °C";
 
+  let temperatureIcon = document.querySelector(".temp-icon");
+  if (temperatureIcon.tagName === "svg") {
+    const prevSibling = temperatureIcon.nextElementSibling;
+    temperatureIcon.remove();
+    temperatureIcon = document.createElement("img");
+    temperatureIcon.classList.add("temp-icon");
+    prevSibling.insertAdjacentElement("beforebegin", temperatureIcon);
+  }
+
+  const feelsLikeTemp = weatherData.main_temp_feels_like;
+  let tempIcon;
+  if (feelsLikeTemp <= -12) {
+    tempIcon = Images.TemperatureIcon[0];
+  } else if (feelsLikeTemp > -12 && feelsLikeTemp <= 4) {
+    tempIcon = Images.TemperatureIcon[1];
+  } else if (feelsLikeTemp > 4 && feelsLikeTemp <= 15) {
+    tempIcon = Images.TemperatureIcon[2];
+  } else if (feelsLikeTemp > 15 && feelsLikeTemp <= 25) {
+    tempIcon = Images.TemperatureIcon[3];
+  } else if (feelsLikeTemp > 25 && feelsLikeTemp <= 32) {
+    tempIcon = Images.TemperatureIcon[4];
+  } else {
+    tempIcon = Images.TemperatureIcon[5];
+  }
+  temperatureIcon.setAttribute("src", tempIcon);
+
   const tempActual = document.querySelector(".temp-actual");
   tempActual.textContent = weatherData.main_temp_ave + " °C";
 
