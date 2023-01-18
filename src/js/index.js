@@ -163,6 +163,7 @@ function updateDOM(weatherData) {
   windSpeed.textContent = weatherData.wind_speed + " km/h";
 
   const windAngle = document.querySelector(".wind-angle");
+
   const svgs = document.querySelectorAll('img[src$=".svg"]');
   for (let i = 0; i < svgs.length; i++) {
     SVGInject(svgs[i], function (err, _) {
@@ -172,9 +173,6 @@ function updateDOM(weatherData) {
   windAngle.textContent = weatherData.wind_angle + "°";
 }
 
-const weatherConditionIcon = document.querySelector(".weather-condition-icon");
-// NOTE: src is a stub
-weatherConditionIcon.setAttribute("src", Images.WeatherIcon);
 const locationIcon = document.querySelector(".location-icon");
 locationIcon.setAttribute("src", Images.LocationIcon);
 const sunriseIcon = document.querySelector(".time-sunrise-icon");
