@@ -52,10 +52,17 @@ const getCurrentWeather = async (lat, lon, location) => {
     const sunriseTime = rawData.sys.sunrise || null;
     const sunsetTime = rawData.sys.sunset || null;
 
+    let isDaytime;
+    if (localTime >= sunriseTime && localTime < sunsetTime) {
+      isDaytime = true;
+    } else {
+      isDaytime = false;
+    }
     const weatherData = Object.assign(
       {},
       {
         time: formatDateTime(localTime),
+        isDayOrNight: isDaytime ? "d" : "n",
         name: location,
         name_latlon: rawData.name || null,
         main_temp_ave: rawData.main.temp || null,
