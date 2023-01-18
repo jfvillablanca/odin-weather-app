@@ -113,8 +113,23 @@ function updateDOM(weatherData) {
   const weatherDescription = document.querySelector(".weather-desc");
   weatherDescription.textContent = weatherData.weather_desc;
 
-  const weatherConditionIcon = document.querySelector(
-    ".weather-condition-icon"
+  let weatherConditionIcon = document.querySelector(".weather-condition-icon");
+  if (weatherConditionIcon.tagName === "svg") {
+    const parent = weatherConditionIcon.parentElement;
+    weatherConditionIcon.remove();
+    weatherConditionIcon = document.createElement("img");
+    weatherConditionIcon.classList.add("weather-condition-icon");
+    weatherConditionIcon.setAttribute("alt", "weather icon");
+    parent.prepend(weatherConditionIcon);
+  }
+  console.log(weatherConditionIcon);
+  const id = weatherData.weather_id;
+  const dn = weatherData.isDayOrNight;
+  const ic = weatherData.weather_icon;
+
+  weatherConditionIcon.setAttribute(
+    "src",
+    Images.WeatherIcon[`${ic}${dn}_${id}`]
   );
   // NOTE: src is a stub
   // weatherData.weather_id
