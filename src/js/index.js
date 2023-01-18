@@ -104,6 +104,66 @@ searchbar.onsubmit = () => {
 
 // NOTE: DOM STUFF
 
+function updateDOM(weatherData) {
+  const weatherGist = document.querySelector(".weather-gist");
+  weatherGist.textContent = weatherData.weather_gist;
+
+  const weatherDescription = document.querySelector(".weather-desc");
+  weatherDescription.textContent = weatherData.weather_desc;
+
+  const weatherConditionIcon = document.querySelector(
+    ".weather-condition-icon"
+  );
+  // NOTE: src is a stub
+  // weatherData.weather_id
+  // weatherData.weather_icon
+  // weatherData.isDayOrNight
+
+  weatherConditionIcon.setAttribute("src", Images.WeatherIcon);
+
+  const tempFeelsLike = document.querySelector(".temp-feels-like");
+  tempFeelsLike.textContent = weatherData.main_temp_feels_like + " °C";
+
+  const tempActual = document.querySelector(".temp-actual");
+  tempActual.textContent = weatherData.main_temp_ave + " °C";
+
+  const tempMin = document.querySelector(".temp-min");
+  tempMin.textContent = weatherData.main_temp_min + " °C";
+
+  const tempMax = document.querySelector(".temp-max");
+  tempMax.textContent = weatherData.main_temp_max + " °C";
+
+  const city = document.querySelector(".city");
+  city.textContent = weatherData.name + ", ";
+
+  const country = document.querySelector(".country");
+  country.textContent = weatherData.sys_country;
+
+  const sunrise = document.querySelector(".time-sunrise");
+  sunrise.textContent = weatherData.sys_sunrise;
+
+  const sunset = document.querySelector(".time-sunset");
+  sunset.textContent = weatherData.sys_sunset;
+
+  const measureTime = document.querySelector(".time-measure");
+  measureTime.textContent = weatherData.time;
+
+  const measureLocation = document.querySelector(".time-measure-loc");
+  measureLocation.textContent = weatherData.name_latlon;
+
+  const humidity = document.querySelector(".humidity");
+  humidity.textContent = weatherData.main_humidity + "%";
+
+  const pressure = document.querySelector(".pressure");
+  pressure.textContent = weatherData.main_pressure + " hPa";
+
+  const windSpeed = document.querySelector(".wind-speed");
+  windSpeed.textContent = weatherData.wind_speed + " km/h";
+
+  const windAngle = document.querySelector(".wind-angle");
+  windAngle.textContent = weatherData.wind_angle + "°";
+}
+
 const weatherConditionIcon = document.querySelector(".weather-condition-icon");
 // NOTE: src is a stub
 weatherConditionIcon.setAttribute("src", Images.WeatherIcon);
