@@ -21,15 +21,22 @@ const queryLocation = async (location) => {
   }
 };
 
-const formatDateTime = (dt) => {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  dt *= 1000; // convert to milliseconds
-  return `${new Intl.DateTimeFormat("en-US", options).format(new Date(dt))}`;
+const formatDateTime = (dt, tzOffset, isDate) => {
+  const adjustedTime = (dt + tzOffset) * 1000; // convert to milliseconds
+  const timeInLocal = new Date(adjustedTime);
+  const timeInUTC = timeInLocal.toUTCString();
+
+  if (isDate) {
+    const getFullDate =
+      timeInUTC.split(" ").slice(0, 4).join(" ") +
+      " at " +
+      timeInUTC.split(" ")[4] +
+      " in ";
+    return getFullDate;
+  } else {
+    const getHourAndMinute = timeInUTC.split(" ")[4].slice(0, 5);
+    return getHourAndMinute;
+  }
 };
 
 const getCurrentWeather = async (lat, lon, location) => {
