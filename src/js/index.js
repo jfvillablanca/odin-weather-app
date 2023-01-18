@@ -203,3 +203,7 @@ function injectSVG() {
   }
 }
 injectSVG();
+
+// NOTE: Location for initial page load
+const initialLocation = "Manila";
+tryQuery(initialLocation);
