@@ -61,7 +61,7 @@ const getCurrentWeather = async (lat, lon, location) => {
     const weatherData = Object.assign(
       {},
       {
-        time: formatDateTime(localTime),
+        time: formatDateTime(localTime, tzOffset, true),
         isDayOrNight: isDaytime ? "d" : "n",
         name: location,
         name_latlon: rawData.name || null,
@@ -72,14 +72,14 @@ const getCurrentWeather = async (lat, lon, location) => {
         main_humidity: rawData.main.humidity || null,
         main_pressure: rawData.main.pressure || null,
         sys_country: rawData.sys.country || null,
-        sys_sunrise: formatDateTime(sunriseTime),
-        sys_sunset: formatDateTime(sunsetTime),
         weather_id: rawData.weather[0].id || null,
         weather_main: rawData.weather[0].main || null,
         weather_desc: rawData.weather[0].description || null,
         weather_icon: rawData.weather[0].icon || null,
         wind_angle: rawData.wind.deg || null,
         wind_speed: rawData.wind.speed || null,
+        sys_sunrise: formatDateTime(sunriseTime, tzOffset, false),
+        sys_sunset: formatDateTime(sunsetTime, tzOffset, false),
       }
     );
     return weatherData;
