@@ -31,6 +31,7 @@ import _Temp_2 from "../images/weather/temp_thermometer_2.svg";
 import _Temp_3 from "../images/weather/temp_thermometer_3.svg";
 import _Temp_4 from "../images/weather/temp_thermometer_4.svg";
 import _Temp_5 from "../images/weather/temp_thermometer_5.svg";
+import LoadingIcon from "../images/loader.svg";
 import LocationIcon from "../images/map-pin.svg";
 import SunriseIcon from "../images/weather/sys_sunrise.svg";
 import SunsetIcon from "../images/weather/sys_sunset.svg";
@@ -160,6 +161,7 @@ const WeatherIcon = {
 
 export {
   HumidityIcon,
+  LoadingIcon,
   LocationIcon,
   PressureIcon,
   SunriseIcon,

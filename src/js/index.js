@@ -179,6 +179,8 @@ function updateDOM(weatherData) {
   injectSVG();
 }
 
+const weatherConditionIcon = document.querySelector(".weather-condition-icon");
+weatherConditionIcon.setAttribute("src", Images.LoadingIcon);
 const locationIcon = document.querySelector(".location-icon");
 locationIcon.setAttribute("src", Images.LocationIcon);
 const sunriseIcon = document.querySelector(".time-sunrise-icon");
