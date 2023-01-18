@@ -26,12 +26,14 @@ import Storm_2_1 from "../images/weather/storm_2_1.svg";
 import Storm_2_2 from "../images/weather/storm_2_2.svg";
 import Storm_3_1 from "../images/weather/storm_3_1.svg";
 import Storm_4_1 from "../images/weather/storm_4_1.svg";
-import _Temp_1 from "../images/weather/temp_thermometer_1.svg";
-import _Temp_2 from "../images/weather/temp_thermometer_2.svg";
-import _Temp_3 from "../images/weather/temp_thermometer_3.svg";
-import _Temp_4 from "../images/weather/temp_thermometer_4.svg";
-import _Temp_5 from "../images/weather/temp_thermometer_5.svg";
+import Temp_1 from "../images/weather/temp_thermometer_1.svg";
+import Temp_2 from "../images/weather/temp_thermometer_2.svg";
+import Temp_3 from "../images/weather/temp_thermometer_3.svg";
+import Temp_4 from "../images/weather/temp_thermometer_4.svg";
+import Temp_5 from "../images/weather/temp_thermometer_5.svg";
+import Temp_6 from "../images/weather/temp_thermometer_6.svg";
 import LoadingIcon from "../images/loader.svg";
+import TempLoadingIcon from "../images/thermometer.svg";
 import LocationIcon from "../images/map-pin.svg";
 import SunriseIcon from "../images/weather/sys_sunrise.svg";
 import SunsetIcon from "../images/weather/sys_sunset.svg";
@@ -159,6 +161,8 @@ const WeatherIcon = {
   "04n_804": Cloud_2_1,
 };
 
+const TemperatureIcon = [Temp_1, Temp_2, Temp_3, Temp_4, Temp_5, Temp_6];
+
 export {
   HumidityIcon,
   LoadingIcon,
@@ -166,6 +170,8 @@ export {
   PressureIcon,
   SunriseIcon,
   SunsetIcon,
+  TemperatureIcon,
+  TempLoadingIcon,
   WeatherIcon,
   WindAngleIcon,
   WindSpeedIcon,
