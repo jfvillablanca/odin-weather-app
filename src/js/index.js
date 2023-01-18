@@ -45,7 +45,6 @@ const getCurrentWeather = async (lat, lon, location) => {
   );
   const rawData = await response.json();
   if (+rawData.cod !== 200) {
-    console.log(rawData);
     return `Error: Current Weather API => Status Code: ${rawData.cod}`;
   } else {
     const timezoneShift = rawData.timezone || null;
@@ -55,7 +54,6 @@ const getCurrentWeather = async (lat, lon, location) => {
 
     const weatherData = Object.assign(
       {},
-      // TODO: Check if day or night
       {
         time: formatDateTime(localTime),
         name: location,
@@ -87,7 +85,6 @@ searchbar.onsubmit = () => {
     const input = document.querySelector("input[type='text']");
     queryLocation(input.value)
       .then((weatherData) => {
-        console.log(weatherData);
       })
       .catch((error) => {
         throw new Error(error);
