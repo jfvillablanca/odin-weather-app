@@ -13,6 +13,7 @@ const queryLocation = async (location) => {
     return `Error: Geocoding API => Status Code: ${rawData.cod}`;
   } else {
     const weatherData = await getCurrentWeather(
+      // FIXME: Throw DOM notice if location does not exist
       rawData[0].lat,
       rawData[0].lon,
       rawData[0].name
