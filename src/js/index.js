@@ -87,11 +87,15 @@ const getCurrentWeather = async (lat, lon, location) => {
   }
 };
 
+// NOTE: DOM STUFF
+
 const searchbar = document.querySelector(".searchbar");
-searchbar.onsubmit = () => {
+const input = document.querySelector("input[type='text']");
+searchbar.onsubmit = () => tryQuery(input.value);
+
+function tryQuery(queriedLocation) {
   try {
-    const input = document.querySelector("input[type='text']");
-    queryLocation(input.value)
+    queryLocation(queriedLocation)
       .then((weatherData) => {
         updateDOM(weatherData);
       })
@@ -102,9 +106,7 @@ searchbar.onsubmit = () => {
     throw new Error(error);
   }
   return false;
-};
-
-// NOTE: DOM STUFF
+}
 
 function updateDOM(weatherData) {
   const weatherGist = document.querySelector(".weather-gist");
