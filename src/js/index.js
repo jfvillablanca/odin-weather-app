@@ -163,6 +163,12 @@ function updateDOM(weatherData) {
   windSpeed.textContent = weatherData.wind_speed + " km/h";
 
   const windAngle = document.querySelector(".wind-angle");
+  const svgs = document.querySelectorAll('img[src$=".svg"]');
+  for (let i = 0; i < svgs.length; i++) {
+    SVGInject(svgs[i], function (err, _) {
+      if (err) throw err;
+    });
+  }
   windAngle.textContent = weatherData.wind_angle + "°";
 }
 
@@ -183,10 +189,3 @@ const windSpeedIcon = document.querySelector(".wind-speed-icon");
 windSpeedIcon.setAttribute("src", Images.WindSpeedIcon);
 const windAngleIcon = document.querySelector(".wind-angle-icon");
 windAngleIcon.setAttribute("src", Images.WindAngleIcon);
-
-const svgs = document.querySelectorAll('img[src$=".svg"]');
-for (let i = 0; i < svgs.length; i++) {
-  SVGInject(svgs[i], function (err, _) {
-    if (err) throw err;
-  });
-}
