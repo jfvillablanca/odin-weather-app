@@ -103,6 +103,21 @@ input[type="submit"] {
   grid-column: span 3;
   font-size: 4.3rem;
   align-self: center;
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 2rem;
+}
+
+.temp-feels-like-div p {
+  grid-column: span 2;
+}
+
+.temp-icon {
+  font-style: 1.0rem;
+  place-self: center;
+  min-height: 4rem; 
+  width: auto;
 }
 
 .temp-actual {
