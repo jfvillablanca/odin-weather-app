@@ -73,7 +73,7 @@ const getCurrentWeather = async (lat, lon, location) => {
         main_pressure: rawData.main.pressure || null,
         sys_country: rawData.sys.country || null,
         weather_id: rawData.weather[0].id || null,
-        weather_main: rawData.weather[0].main || null,
+        weather_gist: rawData.weather[0].main || null,
         weather_desc: rawData.weather[0].description || null,
         weather_icon: rawData.weather[0].icon || null,
         wind_angle: rawData.wind.deg || null,
