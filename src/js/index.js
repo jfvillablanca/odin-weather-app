@@ -47,10 +47,10 @@ const getCurrentWeather = async (lat, lon, location) => {
   if (+rawData.cod !== 200) {
     return `Error: Current Weather API => Status Code: ${rawData.cod}`;
   } else {
-    const timezoneShift = rawData.timezone || null;
-    const localTime = (rawData.dt || null) + timezoneShift;
-    const sunriseTime = (rawData.sys.sunrise || null) + timezoneShift;
-    const sunsetTime = (rawData.sys.sunset || null) + timezoneShift;
+    const tzOffset = rawData.timezone || null;
+    const localTime = rawData.dt || null;
+    const sunriseTime = rawData.sys.sunrise || null;
+    const sunsetTime = rawData.sys.sunset || null;
 
     const weatherData = Object.assign(
       {},
