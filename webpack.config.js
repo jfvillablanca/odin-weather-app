@@ -6,6 +6,7 @@ module.exports = {
   entry: "./src/js/index.js",
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
       template: "./src/index.html",
     }),
   ],
@@ -16,7 +17,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    clean: false,
+    clean: true,
   },
   module: {
     rules: [
