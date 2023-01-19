@@ -125,7 +125,6 @@ function updateDOM(weatherData) {
     weatherConditionIcon.setAttribute("alt", "weather icon");
     parent.prepend(weatherConditionIcon);
   }
-  console.log(weatherConditionIcon);
   const id = weatherData.weather_id;
   const dn = weatherData.isDayOrNight;
   const ic = weatherData.weather_icon;
